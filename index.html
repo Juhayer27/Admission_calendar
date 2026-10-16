@@ -39,7 +39,7 @@ const exams=[
 {id:'cu',name:'Chittagong University',full:'University of Chittagong',branch:'University',priority:24,date:'2027-01-29T11:00:00+06:00',status:'tentative',note:'সাব-ইউনিটসহ পূর্ণ সূচি যাচাই করে আপডেট করতে হবে',units:['A Unit','B Unit','C Unit','D Unit','Sub-units — পৃথক তারিখ অফিসিয়াল সূচি অনুযায়ী'],url:'https://admission.cu.ac.bd/'},
 {id:'ku',name:'Khulna University',full:'Khulna University',branch:'University',priority:25,date:'2026-12-17T11:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ; চূড়ান্ত ভর্তি বিজ্ঞপ্তি যাচাই করুন',units:['A Unit','B Unit','C Unit','D Unit — চূড়ান্ত ইউনিট সূচি অপেক্ষমাণ'],url:'https://ku.ac.bd/'},
 {id:'gst',name:'GST Integrated Admission',full:'General, Science & Technology Universities',branch:'University',priority:26,date:'2027-01-02T10:00:00+06:00',status:'tentative',note:'প্রদত্ত আপডেট অনুযায়ী: ২ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['A Unit — Science','B Unit — Humanities','C Unit — Business Studies'],url:'https://gstadmission.ac.bd/'},
-{id:'agri',name:'Agriculture Cluster',full:'Agricultural Universities Admission Cluster',branch:'University',priority:27,date:null,status:'unknown',note:'২০২৬–২৭ সেশনের তারিখ নিশ্চিত নয়',units:['Combined Agriculture Admission Test'],url:'https://acas.edu.bd/'}
+  
 ];
 const bnDigits=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);const grid=document.getElementById('examGrid');let branch='সব';
 function formatDate(s){return new Intl.DateTimeFormat('bn-BD',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Dhaka'}).format(new Date(s))}
