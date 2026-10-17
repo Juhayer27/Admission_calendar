@@ -1,300 +1,55 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080c17">
-<meta name="description" content="Admission Calendar by Entropic Mind — Bangladesh admission countdown 2026–27">
-<title>Admission Calendar BD | 2026–27</title>
+<!doctype html>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080c17"><meta name="description" content="Bangladesh University Admission Countdown — track engineering, university, medical and dental admission tests."><title>Admission Countdown BD | 2026–27</title>
 <style>
-:root{
---bg:#080c17;--panel:#101827;--panel2:#151f31;
---line:#26344b;--text:#f4f6fc;--muted:#9aa9c2;
---gold:#e8c77b;--cyan:#7ee7dc;--green:#8ee3b1;
---orange:#ffc985;--shadow:0 18px 55px #0005
-}
-*{box-sizing:border-box}
-body{
-margin:0;background:
-radial-gradient(ellipse at 80% -10%,#263754 0,transparent 34%),
-radial-gradient(ellipse at 0% 35%,#102b36 0,transparent 28%),var(--bg);
-color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;line-height:1.55
-}
-a{color:var(--cyan);text-decoration:none}
-.wrap{max-width:1180px;margin:auto;padding:20px}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 0 22px}
-.brand{display:flex;align-items:center;gap:12px}
-.mark{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold),#a8833f);color:#111827;font-weight:950;font-size:20px}
-.brand h1{font-size:17px;margin:0}
-.brand p{margin:1px 0 0;color:var(--muted);font-size:11px;letter-spacing:1.5px}
-.creator{text-align:right;color:var(--muted);font-size:11px}
-.creator strong{display:block;color:var(--gold);font-size:13px}
-.hero{border:1px solid #35445b;border-radius:28px;padding:clamp(22px,4vw,42px);background:linear-gradient(120deg,#151f30f5,#111c2bef 58%,#142d36f2);box-shadow:var(--shadow)}
-.eyebrow{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:800}
-.hero h2{font-size:clamp(29px,5vw,52px);line-height:1.12;margin:12px 0}
-.hero h2 span{color:var(--gold)}
-.hero p{color:#b8c4d8;max-width:650px}
-.herofoot{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
-.pill{padding:7px 11px;border:1px solid #3a4a60;border-radius:99px;background:#0a111dcc;color:#c4d0e3;font-size:11px}
-.warning{margin:15px 0;padding:12px 14px;border-radius:13px;border:1px solid #66542e;background:#211e17;color:#eedba9;font-size:12px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0 25px}
-.stat{padding:17px;border:1px solid var(--line);background:#101827c9;border-radius:18px}
-.stat span{font-size:11px;color:var(--muted)}
-.stat b{display:block;font-size:25px;margin-top:4px}
-.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 12px}
-.sectionhead h2{font-size:21px;margin:0}
-.sectionhead p{margin:3px 0 0;color:var(--muted);font-size:12px}
-.toolbar{display:grid;grid-template-columns:minmax(180px,1fr) 220px;gap:10px;margin:14px 0}
-.field,select{width:100%;background:#111a29;color:var(--text);border:1px solid #2d3c52;border-radius:12px;padding:12px 14px;font:inherit;font-size:13px;outline:none}
-.field:focus,select:focus{border-color:var(--gold)}
-.branches{display:flex;gap:8px;overflow:auto;padding:2px 0 10px;margin-bottom:7px}
-.branch{white-space:nowrap;border:1px solid #2d3c52;background:#111a29;color:#aab8cc;border-radius:99px;padding:9px 14px;font-size:12px;cursor:pointer}
-.branch.active{background:var(--gold);border-color:var(--gold);color:#111827;font-weight:800}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.exam{border:1px solid var(--line);background:linear-gradient(150deg,#131e2e,#0e1624);border-radius:19px;padding:17px;display:flex;flex-direction:column;gap:13px;min-width:0}
-.examtop{display:flex;justify-content:space-between;gap:10px}
-.exam h3{margin:0;font-size:17px;line-height:1.3}
-.subtitle{color:var(--muted);font-size:11px;margin-top:4px}
-.status{font-size:10px;padding:5px 8px;border-radius:8px;height:max-content;border:1px solid #685832;color:var(--orange);background:#2b2418}
-.status.official{border-color:#2e6757;background:#132b27;color:var(--green)}
-.status.unknown{border-color:#47546b;background:#1b2535;color:#b9c5d8}
-.date{font-weight:800;font-size:20px}
-.date small{font-size:11px;color:var(--muted);font-weight:500}
-.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.unit{background:#080f1b;border:1px solid #233149;border-radius:10px;text-align:center;padding:8px 3px}
-.unit b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
-.unit span{font-size:9px;color:var(--muted)}
-.nodate{padding:12px;background:#0b1320;border:1px dashed #334157;border-radius:12px;color:#a8b6cb;font-size:12px}
-.chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{border:1px solid #2b3a51;border-radius:7px;padding:4px 7px;font-size:10px;color:#b9c6d9}
-.cardfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:11px;border-top:1px solid #263349;flex-wrap:wrap}
-.small{font-size:10px;color:var(--muted)}
-.source{font-size:11px}
-.choice-btn{width:100%;padding:10px;border:1px solid #66542e;border-radius:11px;background:#211e17;color:var(--gold);font-size:12px;font-weight:750;cursor:pointer}
-.choice-btn.saved{background:#26321f;border-color:#64804a;color:#c5f0a8}
-.choicebar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:14px 0}
-.choice-note{font-size:11px;color:var(--muted)}
-.empty{padding:25px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:15px;grid-column:1/-1}
-.footer{margin-top:32px;border-top:1px solid var(--line);padding:20px 0 10px;text-align:center;color:var(--muted);font-size:11px}
-.footer strong{color:var(--gold)}
-@media(max-width:650px){
-.wrap{padding:13px}.topbar{align-items:flex-start}.creator{max-width:125px}
-.hero{border-radius:22px}.stats{gap:7px}.stat{padding:12px}.stat b{font-size:20px}
-.toolbar{grid-template-columns:1fr}.grid{grid-template-columns:1fr}
-.sectionhead{align-items:start;flex-direction:column}.exam{padding:15px}
-}
-</style>
-</head>
-<body>
-<main class="wrap">
-<header class="topbar">
- <div class="brand">
-  <div class="mark">A</div>
-  <div><h1>Admission Calendar BD</h1><p>Academic Session 2026–27</p></div>
- </div>
- <div class="creator">Designed & maintained by<strong>Md. Shah Juhayer</strong></div>
-</header>
-
-<section class="hero">
- <div class="eyebrow">ADMISSION CALENDAR BY ENTROPIC MIND</div>
- <h2>সময়কে কাজে লাগাও।<br><span>লক্ষ্য হোক নিশ্চিত।</span></h2>
- <p>বাংলাদেশের Engineering, University, Medical ও Dental admission test-এর তারিখ, status এবং live countdown—সব এক জায়গায়।</p>
- <div class="herofoot">
-  <span class="pill">● Live day · hour · minute · second countdown</span>
-  <span class="pill">✦ My Choices · Personal exam tracker</span>
-  <span class="pill">বাংলা · ২০২৬–২৭</span>
- </div>
-</section>
-
-<div class="warning">
- <strong>তারিখ যাচাই নোট:</strong> অফিসিয়াল ভর্তি বিজ্ঞপ্তি নিশ্চিত না হলে তারিখের পাশে <b>(চূড়ান্ত নয়)</b> দেখানো হয়েছে। সম্ভাব্য তারিখ বদলাতে পারে—আবেদন বা যাত্রার আগে সংশ্লিষ্ট প্রতিষ্ঠানের অফিসিয়াল ওয়েবসাইট দেখুন।
-</div>
-
-<section class="stats">
- <div class="stat"><span>ট্র্যাক করা পরীক্ষা</span><b id="totalCount">—</b></div>
- <div class="stat"><span>তারিখ প্রকাশিত</span><b id="datedCount">—</b></div>
- <div class="stat"><span>পরবর্তী পরীক্ষা</span><b id="nextExam">—</b></div>
-</section>
-
-<section>
- <div class="sectionhead">
-  <div><h2>ভর্তি পরীক্ষার ট্র্যাকার</h2><p>প্রতিষ্ঠান, বিভাগ ও ইউনিট অনুযায়ী খুঁজুন</p></div>
- </div>
-
- <div class="branches" id="branches">
-  <button class="branch active" data-branch="সব">সব পরীক্ষা</button>
-  <button class="branch" data-branch="My Choices">⭐ My Choices</button>
-  <button class="branch" data-branch="Engineering">Engineering</button>
-  <button class="branch" data-branch="University">University</button>
-  <button class="branch" data-branch="Medical">Medical</button>
-  <button class="branch" data-branch="Dental">Dental</button>
- </div>
-
- <div class="toolbar">
-  <input class="field" id="search" placeholder="প্রতিষ্ঠান বা ইউনিট খুঁজুন…">
-  <select id="sort">
-   <option value="priority">Priority অনুযায়ী</option>
-   <option value="date">পরীক্ষার তারিখ অনুযায়ী</option>
-   <option value="name">নাম অনুযায়ী</option>
-  </select>
- </div>
- <div class="choicebar">
-  <span class="choice-note" id="choiceCount">⭐ ০টি পরীক্ষা নির্বাচিত</span>
-  <button class="branch" id="clearChoices" type="button">সব Choice মুছুন</button>
- </div>
- <div class="grid" id="examGrid"></div>
-</section>
-
-<footer class="footer">
- Admission Calendar by <strong>Entropic Mind</strong><br>
- Session 2026–27 · Designed & maintained by <strong>Md. Shah Juhayer</strong><br>
- শিক্ষার্থীদের সহায়তার জন্য তৈরি একটি স্বাধীন তথ্যভিত্তিক ওয়েব অ্যাপ। এটি কোনো বিশ্ববিদ্যালয় বা ভর্তি কর্তৃপক্ষের অফিসিয়াল ওয়েবসাইট নয়।
-</footer>
-</main>
-
-<script>
-// Admission dates may change. Verify dates against official notices.
+:root{--bg:#080c17;--panel:#101827;--panel2:#151f31;--line:#26344b;--text:#f4f6fc;--muted:#9aa9c2;--gold:#e8c77b;--cyan:#7ee7dc;--green:#8ee3b1;--orange:#ffc985;--red:#ff9b9b;--shadow:0 18px 55px #0005}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#263754 0,transparent 34%),radial-gradient(ellipse at 0% 35%,#102b36 0,transparent 28%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;line-height:1.55}a{color:var(--cyan);text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:20px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 0 22px}.brand{display:flex;align-items:center;gap:12px}.mark{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold),#a8833f);color:#111827;font-weight:950;font-size:20px;box-shadow:0 8px 30px #e8c77b25}.brand h1{font-size:17px;letter-spacing:.2px;margin:0}.brand p{margin:1px 0 0;color:var(--muted);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.creator{text-align:right;color:var(--muted);font-size:11px}.creator strong{display:block;color:var(--gold);font-size:13px;font-weight:700}.hero{position:relative;overflow:hidden;border:1px solid #35445b;border-radius:28px;padding:clamp(22px,4vw,42px);background:linear-gradient(120deg,#151f30f5,#111c2beF 58%,#142d36f2);box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid #e8c77b20;right:-95px;top:-125px;box-shadow:0 0 0 28px #e8c77b08,0 0 0 58px #e8c77b05}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero h2{font-size:clamp(29px,5vw,52px);line-height:1.12;letter-spacing:-1.5px;margin:12px 0}.hero h2 span{color:var(--gold)}.hero p{color:#b8c4d8;max-width:650px;margin:0}.herofoot{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.pill{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #3a4a60;border-radius:99px;background:#0a111dcc;color:#c4d0e3;font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.warning{margin:15px 0;padding:12px 14px;border-radius:13px;border:1px solid #66542e;background:#211e17;color:#eedba9;font-size:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:15px 0 25px}.stat{padding:17px;border:1px solid var(--line);background:#101827c9;border-radius:18px}.stat span{font-size:11px;color:var(--muted)}.stat b{display:block;font-size:25px;margin-top:4px;letter-spacing:-.5px}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 12px}.sectionhead h2{font-size:21px;margin:0}.sectionhead p{margin:3px 0 0;color:var(--muted);font-size:12px}.toolbar{display:grid;grid-template-columns:minmax(180px,1fr) 220px;gap:10px;margin:14px 0}.field,select{width:100%;background:#111a29;color:var(--text);border:1px solid #2d3c52;border-radius:12px;padding:12px 14px;font:inherit;font-size:13px;outline:none}.field:focus,select:focus{border-color:var(--gold)}.branches{display:flex;gap:8px;overflow:auto;padding:2px 0 10px;margin-bottom:7px}.branch{white-space:nowrap;border:1px solid #2d3c52;background:#111a29;color:#aab8cc;border-radius:99px;padding:9px 14px;font-size:12px;cursor:pointer}.branch.active{background:var(--gold);border-color:var(--gold);color:#111827;font-weight:800}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.exam{border:1px solid var(--line);background:linear-gradient(150deg,#131e2e,#0e1624);border-radius:19px;padding:17px;display:flex;flex-direction:column;gap:13px;min-width:0;transition:transform .18s,border-color .18s}.exam:hover{transform:translateY(-2px);border-color:#596780}.examtop{display:flex;justify-content:space-between;gap:10px}.exam h3{margin:0;font-size:17px;line-height:1.3}.subtitle{color:var(--muted);font-size:11px;margin-top:4px}.status{white-space:nowrap;font-size:10px;padding:5px 8px;border-radius:8px;height:max-content;border:1px solid #685832;color:var(--orange);background:#2b2418}.status.official{border-color:#2e6757;background:#132b27;color:var(--green)}.status.unknown{border-color:#47546b;background:#1b2535;color:#b9c5d8}.date{font-weight:800;font-size:20px;letter-spacing:-.4px}.date small{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.unit{background:#080f1b;border:1px solid #233149;border-radius:10px;text-align:center;padding:8px 3px}.unit b{display:block;font-size:18px;font-variant-numeric:tabular-nums}.unit span{font-size:9px;color:var(--muted)}.nodate{padding:12px;background:#0b1320;border:1px dashed #334157;border-radius:12px;color:#a8b6cb;font-size:12px}.chips{display:flex;flex-wrap:wrap;gap:5px}.chip{border:1px solid #2b3a51;border-radius:7px;padding:4px 7px;font-size:10px;color:#b9c6d9}.cardfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:11px;border-top:1px solid #263349}.choicebtn{border:1px solid #79663b;background:#211e17;color:var(--gold);border-radius:9px;padding:7px 10px;font:inherit;font-size:11px;cursor:pointer}.choicebtn.saved{background:var(--gold);color:#111827;font-weight:800}.choicebar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:10px 0 14px}.choicecount{font-size:12px;color:var(--muted)}.small{font-size:10px;color:var(--muted)}.source{font-size:11px}.empty{padding:25px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:15px;grid-column:1/-1}.footer{margin-top:32px;border-top:1px solid var(--line);padding:20px 0 10px;text-align:center;color:var(--muted);font-size:11px}.footer strong{color:var(--gold)}@media(max-width:650px){.wrap{padding:13px}.topbar{align-items:flex-start}.creator{max-width:125px}.hero{border-radius:22px}.stats{gap:7px}.stat{padding:12px}.stat b{font-size:20px}.toolbar{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}.exam{padding:15px}}
+</style></head><body><main class="wrap">
+<header class="topbar"><div class="brand"><div class="mark">A</div><div><h1>Admission Countdown BD</h1><p>Academic Session 2026–27</p></div></div><div class="creator">Designed & maintained by<strong>Md. Shah Juhayer</strong></div></header>
+<section class="hero"><div class="eyebrow">Your next chapter starts here</div><h2>সময়কে কাজে লাগাও।<br><span>লক্ষ্য হোক নিশ্চিত।</span></h2><p>বাংলাদেশের Engineering, University, Medical ও Dental admission test-এর তারিখ, status এবং live countdown—সব এক জায়গায়।</p><div class="herofoot"><span class="pill"><i class="dot"></i> Live day · hour · minute · second countdown</span><span class="pill">✦ Priority exam tracker</span><span class="pill">বাংলা · ২০২৬–২৭</span></div></section>
+<div class="warning"><strong>তারিখ যাচাই নোট:</strong> অফিসিয়াল ভর্তি বিজ্ঞপ্তি নিশ্চিত না হলে তারিখের পাশে <b>(চূড়ান্ত নয়)</b> দেখানো হয়েছে। সম্ভাব্য তারিখ বদলাতে পারে—আবেদন বা যাত্রার আগে সংশ্লিষ্ট প্রতিষ্ঠানের অফিসিয়াল ওয়েবসাইট দেখুন।</div>
+<section class="stats"><div class="stat"><span>ট্র্যাক করা প্রতিষ্ঠান</span><b id="totalCount">—</b></div><div class="stat"><span>তারিখ প্রকাশিত</span><b id="datedCount">—</b></div><div class="stat"><span>পরবর্তী পরীক্ষা</span><b id="nextExam">—</b></div></section>
+<section><div class="sectionhead"><div><h2>ভর্তি পরীক্ষার ট্র্যাকার</h2><p>প্রতিষ্ঠান, বিভাগ ও ইউনিট অনুযায়ী খুঁজুন</p></div></div><div class="branches" id="branches"><button class="branch active" data-branch="সব" >সব পরীক্ষা</button><button class="branch" data-branch="Engineering">Engineering</button><button class="branch" data-branch="University">University</button><button class="branch" data-branch="Medical">Medical</button><button class="branch" data-branch="Dental">Dental</button></div>
+<div class="toolbar"><input class="field" id="search" placeholder="প্রতিষ্ঠান বা ইউনিট খুঁজুন…"><select id="sort"><option value="priority">Priority অনুযায়ী</option><option value="date">পরীক্ষার তারিখ অনুযায়ী</option><option value="name">নাম অনুযায়ী</option></select></div><div class="choicebar"><span class="choicecount" id="choiceCount">My Choices: ০</span><button class="choicebtn" id="showChoices" aria-pressed="false">★ শুধু My Choices দেখুন</button></div><div class="grid" id="examGrid"></div></section>
+<footer class="footer">Admission Countdown BD <span>·</span> Session 2026–27<br>Created by <strong>Md. Shah Juhayer</strong><br>শিক্ষার্থীদের সহায়তার জন্য তৈরি একটি স্বাধীন তথ্যভিত্তিক ওয়েব অ্যাপ। এটি কোনো বিশ্ববিদ্যালয় বা ভর্তি কর্তৃপক্ষের অফিসিয়াল ওয়েবসাইট নয়।</footer>
+</main><script>
+// Dates updated from user-provided corrections. Verify against official notices before treating as confirmed.
 const exams=[
 {id:'buet',name:'BUET',full:'Bangladesh University of Engineering and Technology',branch:'Engineering',priority:1,date:'2027-01-16T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ১৬ জানুয়ারি ২০২৭। চূড়ান্ত নয়',units:['Preliminary / Written — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://admission.buet.ac.bd/'},
 {id:'cuet',name:'CUET',full:'Chittagong University of Engineering & Technology',branch:'Engineering',priority:2,date:'2027-01-23T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ২৩ জানুয়ারি ২০২৭। চূড়ান্ত নয়',units:['Engineering & Architecture — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://cuet.ac.bd/'},
-{id:'kuet',name:'KUET',full:'Khulna University of Engineering & Technology',branch:'Engineering',priority:3,date:'2027-01-08T10:00:00+06:00',status:'tentative',note:'তারিখ পুনরায় অফিসিয়াল বিজ্ঞপ্তির সঙ্গে যাচাই করুন',units:['Undergraduate Admission Test'],url:'https://admission.kuet.ac.bd/'},
+{id:'kuet',name:'KUET',full:'Khulna University of Engineering & Technology',branch:'Engineering',priority:3,date:'2027-01-08T10:00:00+06:00',status:'official',note:'অফিশিয়াল ২০২৬–২৭ ভর্তি পোর্টালে তারিখ প্রদর্শিত',units:['Undergraduate Admission Test'],url:'https://admission.kuet.ac.bd/'},
 {id:'ruet',name:'RUET',full:'Rajshahi University of Engineering & Technology',branch:'Engineering',priority:4,date:'2027-01-14T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ—চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Engineering / Architecture — বিস্তারিত বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://admission.ruet.ac.bd/'},
 {id:'mist',name:'MIST',full:'Military Institute of Science and Technology',branch:'Engineering',priority:5,date:'2026-12-18T10:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; পরিবর্তন হতে পারে',units:['Engineering','Architecture'],url:'https://mist.ac.bd/'},
-{id:'sust',name:'SUST',full:'Shahjalal University of Science and Technology',branch:'Engineering',priority:6,date:'2027-01-26T10:00:00+06:00',status:'tentative',note:'প্রদত্ত তারিখ: ২৬ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['A Unit','B Unit — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://admission.sust.edu.bd/'},
-{id:'butex',name:'BUTEX',full:'Bangladesh University of Textiles',branch:'Engineering',priority:7,date:'2027-01-29T10:00:00+06:00',status:'tentative',note:'প্রদত্ত তারিখ: ২৯ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['B.Sc. in Textile Engineering — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://www.butex.edu.bd/'},
+{id:'sust',name:'SUST',full:'Shahjalal University of Science and Technology',branch:'Engineering',priority:6,date:'2027-01-26T10:00:00+06:00',status:'tentative',note:'প্রদত্ত আপডেট অনুযায়ী: ২৬ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['A Unit','B Unit — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://admission.sust.edu.bd/'},
+{id:'butex',name:'BUTEX',full:'Bangladesh University of Textiles',branch:'Engineering',priority:7,date:'2027-01-29T10:00:00+06:00',status:'tentative',note:'প্রদত্ত আপডেট অনুযায়ী: ২৯ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['B.Sc. in Textile Engineering — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://www.butex.edu.bd/'},
 {id:'iut',name:'IUT',full:'Islamic University of Technology',branch:'Engineering',priority:8,date:null,status:'unknown',note:'ভর্তি পরীক্ষার তারিখ এখনো ঘোষণা করা হয়নি',units:['B.Sc. Engineering','BBA — বিজ্ঞপ্তি অপেক্ষমাণ'],url:'https://admission.iutoic-dhaka.edu/'},
-{id:'medical',name:'Medical Admission',full:'MBBS — Government & Private Medical Colleges',branch:'Medical',priority:9,date:'2026-12-04T10:00:00+06:00',status:'tentative',note:'প্রদত্ত তারিখ: ৪ ডিসেম্বর ২০২৬; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['MBBS'],url:'https://dgme.gov.bd/'},
-{id:'dental',name:'Dental Admission',full:'BDS — Dental Colleges & Units',branch:'Dental',priority:10,date:'2026-12-04T10:00:00+06:00',status:'tentative',note:'প্রদত্ত তারিখ: ৪ ডিসেম্বর ২০২৬; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['BDS'],url:'https://dgme.gov.bd/'},
-{id:'du-iba',name:'Dhaka University — IBA',full:'University of Dhaka',branch:'University',priority:11,date:'2026-12-05T10:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; মূল বিজ্ঞপ্তি যাচাই করুন',units:['IBA'],url:'https://admission.eis.du.ac.bd/'},
-{id:'du-science',name:'Dhaka University — Science',full:'University of Dhaka',branch:'University',priority:12,date:'2026-12-12T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Science Unit'],url:'https://admission.eis.du.ac.bd/'},
-{id:'du-arts',name:'Dhaka University — Arts, Law & Social Science',full:'University of Dhaka',branch:'University',priority:13,date:'2026-12-19T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Arts, Law & Social Science Unit'],url:'https://admission.eis.du.ac.bd/'},
-{id:'du-fine',name:'Dhaka University — Fine Arts',full:'University of Dhaka',branch:'University',priority:14,date:'2026-12-22T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Fine Arts Unit'],url:'https://admission.eis.du.ac.bd/'},
-{id:'du-business',name:'Dhaka University — Business Studies',full:'University of Dhaka',branch:'University',priority:15,date:'2026-12-26T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Business Studies Unit'],url:'https://admission.eis.du.ac.bd/'},
-{id:'ru-b',name:'Rajshahi University — B Unit',full:'University of Rajshahi',branch:'University',priority:16,date:'2027-01-08T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['B Unit'],url:'https://admission.ru.ac.bd/'},
-{id:'ru-c',name:'Rajshahi University — C Unit',full:'University of Rajshahi',branch:'University',priority:17,date:'2027-01-09T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['C Unit'],url:'https://admission.ru.ac.bd/'},
-{id:'ru-a',name:'Rajshahi University — A Unit',full:'University of Rajshahi',branch:'University',priority:18,date:'2027-01-16T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['A Unit'],url:'https://admission.ru.ac.bd/'},
-{id:'jnu-a',name:'Jagannath University — A Unit',full:'Jagannath University',branch:'University',priority:19,date:'2027-01-01T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['A Unit'],url:'https://admission.jnu.ac.bd/'},
-{id:'jnu-e',name:'Jagannath University — E Unit',full:'Jagannath University',branch:'University',priority:20,date:'2027-01-08T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['E Unit'],url:'https://admission.jnu.ac.bd/'},
-{id:'jnu-b',name:'Jagannath University — B Unit',full:'Jagannath University',branch:'University',priority:21,date:'2027-01-15T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['B Unit'],url:'https://admission.jnu.ac.bd/'},
-{id:'jnu-c',name:'Jagannath University — C Unit',full:'Jagannath University',branch:'University',priority:22,date:'2027-01-22T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['C Unit'],url:'https://admission.jnu.ac.bd/'},
-{id:'jnu-d',name:'Jagannath University — D Unit',full:'Jagannath University',branch:'University',priority:23,date:'2027-01-23T11:00:00+06:00',status:'tentative',note:'প্রাথমিক সূচি; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['D Unit'],url:'https://admission.jnu.ac.bd/'},
-{id:'cu',name:'Chittagong University',full:'University of Chittagong',branch:'University',priority:24,date:'2027-01-29T11:00:00+06:00',status:'tentative',note:'সাব-ইউনিটসহ পূর্ণ সূচি যাচাই করে আপডেট করতে হবে',units:['A Unit','B Unit','C Unit','D Unit','Sub-units — পৃথক তারিখ যাচাই করুন'],url:'https://admission.cu.ac.bd/'},
+{id:'medical',name:'Medical Admission',full:'MBBS — Government & Private Medical Colleges',branch:'Medical',priority:9,date:'2026-12-04T10:00:00+06:00',status:'tentative',note:'প্রদত্ত আপডেট অনুযায়ী: ৪ ডিসেম্বর ২০২৬; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['MBBS'],url:'https://dgme.gov.bd/'},
+{id:'dental',name:'Dental Admission',full:'BDS — Dental Colleges & Units',branch:'Dental',priority:10,date:'2026-12-04T10:00:00+06:00',status:'tentative',note:'প্রদত্ত আপডেট অনুযায়ী: ৪ ডিসেম্বর ২০২৬; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['BDS'],url:'https://dgme.gov.bd/'},
+{id:'du-iba',name:'Dhaka University — IBA',full:'University of Dhaka',branch:'University',priority:11,date:'2026-12-05T10:00:00+06:00',status:'tentative',note:'প্রকাশিত সূচি অনুযায়ী; মূল বিজ্ঞপ্তি পুনরায় যাচাই করুন',units:['IBA'],url:'https://admission.eis.du.ac.bd/'},
+{id:'du-science',name:'Dhaka University — Science',full:'University of Dhaka',branch:'University',priority:12,date:'2026-12-12T11:00:00+06:00',status:'tentative',note:'প্রকাশিত সূচি অনুযায়ী; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Science Unit'],url:'https://admission.eis.du.ac.bd/'},
+{id:'du-arts',name:'Dhaka University — Arts, Law & Social Science',full:'University of Dhaka',branch:'University',priority:13,date:'2026-12-19T11:00:00+06:00',status:'tentative',note:'প্রকাশিত সূচি অনুযায়ী; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Arts, Law & Social Science Unit'],url:'https://admission.eis.du.ac.bd/'},
+{id:'du-fine',name:'Dhaka University — Fine Arts',full:'University of Dhaka',branch:'University',priority:14,date:'2026-12-22T11:00:00+06:00',status:'tentative',note:'প্রকাশিত সূচি অনুযায়ী; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Fine Arts Unit'],url:'https://admission.eis.du.ac.bd/'},
+{id:'du-business',name:'Dhaka University — Business Studies',full:'University of Dhaka',branch:'University',priority:15,date:'2026-12-26T11:00:00+06:00',status:'tentative',note:'প্রকাশিত সূচি অনুযায়ী; চূড়ান্ত বিজ্ঞপ্তি যাচাই করুন',units:['Business Studies Unit'],url:'https://admission.eis.du.ac.bd/'},
+{id:'ru-b',name:'Rajshahi University — B Unit',full:'University of Rajshahi',branch:'University',priority:16,date:'2027-01-08T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['B Unit'],url:'https://admission.ru.ac.bd/'},
+{id:'ru-c',name:'Rajshahi University — C Unit',full:'University of Rajshahi',branch:'University',priority:17,date:'2027-01-09T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['C Unit'],url:'https://admission.ru.ac.bd/'},
+{id:'ru-a',name:'Rajshahi University — A Unit',full:'University of Rajshahi',branch:'University',priority:18,date:'2027-01-16T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['A Unit'],url:'https://admission.ru.ac.bd/'},
+{id:'jnu-a',name:'Jagannath University — A Unit',full:'Jagannath University',branch:'University',priority:19,date:'2027-01-01T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['A Unit'],url:'https://admission.jnu.ac.bd/'},
+{id:'jnu-e',name:'Jagannath University — E Unit',full:'Jagannath University',branch:'University',priority:20,date:'2027-01-08T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['E Unit'],url:'https://admission.jnu.ac.bd/'},
+{id:'jnu-b',name:'Jagannath University — B Unit',full:'Jagannath University',branch:'University',priority:21,date:'2027-01-15T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['B Unit'],url:'https://admission.jnu.ac.bd/'},
+{id:'jnu-c',name:'Jagannath University — C Unit',full:'Jagannath University',branch:'University',priority:22,date:'2027-01-22T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['C Unit'],url:'https://admission.jnu.ac.bd/'},
+{id:'jnu-d',name:'Jagannath University — D Unit',full:'Jagannath University',branch:'University',priority:23,date:'2027-01-23T11:00:00+06:00',status:'tentative',note:'প্রাথমিকভাবে প্রকাশিত; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['D Unit'],url:'https://admission.jnu.ac.bd/'},
+{id:'cu',name:'Chittagong University',full:'University of Chittagong',branch:'University',priority:24,date:'2027-01-29T11:00:00+06:00',status:'tentative',note:'সাব-ইউনিটসহ পূর্ণ সূচি যাচাই করে আপডেট করতে হবে',units:['A Unit','B Unit','C Unit','D Unit','Sub-units — পৃথক তারিখ অফিসিয়াল সূচি অনুযায়ী'],url:'https://admission.cu.ac.bd/'},
 {id:'ku',name:'Khulna University',full:'Khulna University',branch:'University',priority:25,date:'2026-12-17T11:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ; চূড়ান্ত ভর্তি বিজ্ঞপ্তি যাচাই করুন',units:['A Unit','B Unit','C Unit','D Unit — চূড়ান্ত ইউনিট সূচি অপেক্ষমাণ'],url:'https://ku.ac.bd/'},
-{id:'gst',name:'GST Integrated Admission',full:'General, Science & Technology Universities',branch:'University',priority:26,date:'2027-01-02T10:00:00+06:00',status:'tentative',note:'প্রদত্ত তারিখ: ২ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি মিলিয়ে নিন',units:['A Unit — Science','B Unit — Humanities','C Unit — Business Studies'],url:'https://gstadmission.ac.bd/'}
+{id:'ju',name:'Jahangirnagar University',full:'Jahangirnagar University',branch:'University',priority:26,date:'2027-01-17T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ১৭ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['Admission Test — unit-wise schedule যাচাই করুন'],url:'https://ju-admission.org/'},
+{id:'comilla-a',name:'Comilla University — A Unit',full:'Comilla University',branch:'University',priority:27,date:'2027-02-05T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ৫ ফেব্রুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['A Unit'],url:'https://cou.ac.bd/'},
+{id:'gst-b',name:'GST — B Unit',full:'General, Science & Technology Universities',branch:'University',priority:28,date:'2027-03-19T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ১৯ মার্চ ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['B Unit — Humanities'],url:'https://gstadmission.ac.bd/'},
+{id:'gst-c',name:'GST — C Unit',full:'General, Science & Technology Universities',branch:'University',priority:29,date:'2027-03-20T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ২০ মার্চ ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['C Unit — Business Studies'],url:'https://gstadmission.ac.bd/'},
+{id:'gst-d',name:'GST — D Unit (Architecture)',full:'General, Science & Technology Universities',branch:'University',priority:30,date:'2027-03-20T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ২০ মার্চ ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['D Unit — Architecture'],url:'https://gstadmission.ac.bd/'},
+{id:'gst-a',name:'GST — A Unit',full:'General, Science & Technology Universities',branch:'University',priority:31,date:'2027-03-27T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ২৭ মার্চ ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['A Unit — Science'],url:'https://gstadmission.ac.bd/'},
+{id:'agri',name:'Agriculture Cluster',full:'Agricultural Universities Admission Cluster',branch:'University',priority:32,date:'2027-01-02T10:00:00+06:00',status:'tentative',note:'সম্ভাব্য তারিখ: ২ জানুয়ারি ২০২৭; অফিসিয়াল বিজ্ঞপ্তি যাচাই করুন',units:['Combined Agriculture Admission Test'],url:'https://acas.edu.bd/'},
+{id:'afmc',name:'AFMC',full:'Armed Forces Medical College',branch:'Medical',priority:33,date:null,status:'unknown',note:'২০২৬–২৭ সেশনের ভর্তি পরীক্ষার তারিখ ঘোষণা হয়নি',units:['MBBS Admission'],url:'https://afmc.edu.bd/'}
 ];
-
-// My Choices are saved locally in this browser.
-const STORAGE_KEY='entropicMindAdmissionChoices2026';
-function loadChoices(){
- try{
-  const value=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
-  return new Set(Array.isArray(value)?value:[]);
- }catch(e){return new Set();}
-}
-let choices=loadChoices();
-const bnDigits=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
-const grid=document.getElementById('examGrid');
-let branch='সব';
-
-function saveChoices(){
- try{
-  localStorage.setItem(STORAGE_KEY,JSON.stringify([...choices]));
- }catch(e){
-  alert('এই browser-এ selection save করা যায়নি। Browser storage settings পরীক্ষা করুন।');
- }
- updateChoiceCount();
-}
-function updateChoiceCount(){
- document.getElementById('choiceCount').textContent=
- '⭐ '+bnDigits(choices.size)+'টি পরীক্ষা নির্বাচিত';
-}
-function formatDate(s){
- return new Intl.DateTimeFormat('bn-BD',{
-  day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Dhaka'
- }).format(new Date(s));
-}
-function countdown(date){
- let diff=new Date(date).getTime()-Date.now();
- if(diff<=0)return '<div class="nodate">পরীক্ষার সময় পেরিয়ে গেছে / আপডেট প্রয়োজন</div>';
- let d=Math.floor(diff/86400000);diff%=86400000;
- let h=Math.floor(diff/3600000);diff%=3600000;
- let m=Math.floor(diff/60000);
- let s=Math.floor((diff%60000)/1000);
- return `<div class="countdown">
- <div class="unit"><b>${bnDigits(d)}</b><span>দিন</span></div>
- <div class="unit"><b>${bnDigits(String(h).padStart(2,'0'))}</b><span>ঘণ্টা</span></div>
- <div class="unit"><b>${bnDigits(String(m).padStart(2,'0'))}</b><span>মিনিট</span></div>
- <div class="unit"><b>${bnDigits(String(s).padStart(2,'0'))}</b><span>সেকেন্ড</span></div>
- </div>`;
-}
-function toggleChoice(id){
- if(choices.has(id))choices.delete(id);
- else choices.add(id);
- saveChoices();
- render();
-}
-function render(){
- const q=document.getElementById('search').value.trim().toLowerCase();
- const sort=document.getElementById('sort').value;
- let arr=exams.filter(e=>{
-  const matchesBranch=branch==='সব'||(branch==='My Choices'?choices.has(e.id):e.branch===branch);
-  const matchesSearch=[e.name,e.full,e.branch,...e.units].join(' ').toLowerCase().includes(q);
-  return matchesBranch&&matchesSearch;
- });
- if(sort==='date')arr.sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));
- else if(sort==='name')arr.sort((a,b)=>a.name.localeCompare(b.name));
- else arr.sort((a,b)=>a.priority-b.priority);
-
- grid.innerHTML=arr.map(e=>{
-  const saved=choices.has(e.id);
-  const status=e.status==='official'?'Official date':
-   e.status==='tentative'?'সম্ভাব্য / যাচাই প্রয়োজন':'তারিখ ঘোষণা হয়নি';
-  return `<article class="exam">
-   <div class="examtop">
-    <div><h3>${e.name}</h3><div class="subtitle">${e.full}</div></div>
-    <span class="status ${e.status==='official'?'official':e.status==='unknown'?'unknown':''}">${status}</span>
-   </div>
-   ${e.date?
-    `<div><div class="date">${formatDate(e.date)} <small>${e.status==='tentative'?'(চূড়ান্ত নয়)':''}</small></div>${countdown(e.date)}</div>`:
-    `<div class="nodate">${e.note}</div>`}
-   <div class="chips">${e.units.map(u=>`<span class="chip">${u}</span>`).join('')}</div>
-   <div class="small">${e.note}</div>
-   <button class="choice-btn ${saved?'saved':''}" onclick="toggleChoice('${e.id}')">
-    ${saved?'★ Added to My Choices':'☆ Add to My Choices'}
-   </button>
-   <div class="cardfoot">
-    <span class="small">${e.branch}</span>
-    <a class="source" href="${e.url}" target="_blank" rel="noopener">Official website ↗</a>
-   </div>
-  </article>`;
- }).join('')||'<div class="empty">কোনো পরীক্ষা পাওয়া যায়নি। My Choices-এ পরীক্ষা যোগ করুন অথবা অন্য নামে খুঁজুন।</div>';
-
- document.getElementById('totalCount').textContent=bnDigits(exams.length);
- document.getElementById('datedCount').textContent=bnDigits(exams.filter(e=>e.date).length);
- const upcoming=exams.filter(e=>e.date&&new Date(e.date)>new Date())
-  .sort((a,b)=>new Date(a.date)-new Date(b.date))[0];
- document.getElementById('nextExam').textContent=upcoming?upcoming.name:'অপেক্ষমাণ';
- updateChoiceCount();
-}
-
-document.querySelectorAll('.branch').forEach(button=>{
- button.addEventListener('click',()=>{
-  document.querySelectorAll('.branch').forEach(b=>b.classList.remove('active'));
-  button.classList.add('active');
-  branch=button.dataset.branch;
-  render();
- });
-});
-document.getElementById('search').addEventListener('input',render);
-document.getElementById('sort').addEventListener('change',render);
-document.getElementById('clearChoices').addEventListener('click',()=>{
- if(!choices.size){alert('এখনো কোনো পরীক্ষা নির্বাচন করা হয়নি।');return;}
- if(confirm('সব My Choices মুছে ফেলতে চাও?')){
-  choices.clear();saveChoices();render();
- }
-});
-render();
-setInterval(render,1000);
-</script>
-</body>
-</html>
+const bnDigits=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);const grid=document.getElementById('examGrid');let branch='সব';let showChoicesOnly=false;const CHOICE_KEY='entropicMindAdmissionChoices2026';let myChoices=[];try{myChoices=JSON.parse(localStorage.getItem(CHOICE_KEY)||'[]');if(!Array.isArray(myChoices))myChoices=[];}catch(e){myChoices=[];}function saveChoices(){try{localStorage.setItem(CHOICE_KEY,JSON.stringify(myChoices));}catch(e){console.warn('Could not save My Choices locally',e);}updateChoiceCount();}function updateChoiceCount(){document.getElementById('choiceCount').textContent='My Choices: '+bnDigits(myChoices.length);document.getElementById('showChoices').classList.toggle('saved',showChoicesOnly);document.getElementById('showChoices').setAttribute('aria-pressed',String(showChoicesOnly));}
+function formatDate(s){return new Intl.DateTimeFormat('bn-BD',{day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Dhaka'}).format(new Date(s))}
+function countdown(date){let diff=new Date(date).getTime()-Date.now();if(diff<=0)return '<div class="nodate">পরীক্ষার সময় পেরিয়ে গেছে / আপডেট প্রয়োজন</div>';let d=Math.floor(diff/86400000);diff%=86400000;let h=Math.floor(diff/3600000);diff%=3600000;let m=Math.floor(diff/60000);let s=Math.floor((diff%60000)/1000);return `<div class="countdown"><div class="unit"><b>${bnDigits(d)}</b><span>দিন</span></div><div class="unit"><b>${bnDigits(String(h).padStart(2,'0'))}</b><span>ঘণ্টা</span></div><div class="unit"><b>${bnDigits(String(m).padStart(2,'0'))}</b><span>মিনিট</span></div><div class="unit"><b>${bnDigits(String(s).padStart(2,'0'))}</b><span>সেকেন্ড</span></div></div>`}
+function render(){let q=document.getElementById('search').value.trim().toLowerCase(),sort=document.getElementById('sort').value;let arr=exams.filter(e=>(branch==='সব'||e.branch===branch)&&(!showChoicesOnly||myChoices.includes(e.id))&&[e.name,e.full,e.branch,...e.units].join(' ').toLowerCase().includes(q));if(sort==='date')arr.sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));else if(sort==='name')arr.sort((a,b)=>a.name.localeCompare(b.name));else arr.sort((a,b)=>a.priority-b.priority);grid.innerHTML=arr.map(e=>`<article class="exam"><div class="examtop"><div><h3>${e.name}</h3><div class="subtitle">${e.full}</div></div><span class="status ${e.status==='official'?'official':e.status==='unknown'?'unknown':''}">${e.status==='official'?'Official date':e.status==='tentative'?'সম্ভাব্য / যাচাই প্রয়োজন':'তারিখ ঘোষণা হয়নি'}</span></div>${e.date?`<div><div class="date">${formatDate(e.date)} <small>${e.status==='tentative'?'(চূড়ান্ত নয়)':''}</small></div>${countdown(e.date)}</div>`:`<div class="nodate">${e.note}</div>`}<div class="chips">${e.units.map(u=>`<span class="chip">${u}</span>`).join('')}</div><div class="small">${e.note}</div><div class="cardfoot"><span class="small">${e.branch}</span><button class="choicebtn ${myChoices.includes(e.id)?'saved':''}" data-choice="${e.id}" aria-pressed="${myChoices.includes(e.id)}">${myChoices.includes(e.id)?'★ Added':'☆ My Choice'}</button><a class="source" href="${e.url}" target="_blank" rel="noopener">Official website ↗</a></div></article>`).join('')||'<div class="empty">কোনো ফলাফল পাওয়া যায়নি। অন্য নামে খুঁজে দেখুন।</div>';document.getElementById('totalCount').textContent=bnDigits(exams.length);document.getElementById('datedCount').textContent=bnDigits(exams.filter(e=>e.date).length);let upcoming=exams.filter(e=>e.date&&new Date(e.date)>new Date()).sort((a,b)=>new Date(a.date)-new Date(b.date))[0];document.getElementById('nextExam').textContent=upcoming?upcoming.name:'অপেক্ষমাণ';}
+document.querySelectorAll('#branches .branch').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#branches .branch').forEach(x=>x.classList.remove('active'));b.classList.add('active');branch=b.dataset.branch;render()}));document.getElementById('search').addEventListener('input',render);document.getElementById('sort').addEventListener('change',render);document.getElementById('showChoices').addEventListener('click',()=>{showChoicesOnly=!showChoicesOnly;updateChoiceCount();render()});grid.addEventListener('click',e=>{const btn=e.target.closest('[data-choice]');if(!btn)return;const id=btn.dataset.choice;if(myChoices.includes(id))myChoices=myChoices.filter(x=>x!==id);else myChoices.push(id);saveChoices();render()});updateChoiceCount();render();setInterval(render,1000);
+</script></body></html>
